@@ -147,10 +147,10 @@ class EventManager
     #   puts "#{state}: \t #{counter}"
 
     ranks = state_data.sort_by{|state, counter| counter}.collect{|state, counter| state}.reverse
-    state_data = state_data.sort_by{|state, counter| state}
+    state_data = state_data.sort_by{|state, counter| state || ""}
 
     state_data.each do |state, counter|
-      puts "#{state}:\t#{counter}\t(#{ranks.index(state) + 1})"  
+      puts "#{state}:\t#{counter}\t(#{ranks.index(state) + 1})"
     end
   end
 
